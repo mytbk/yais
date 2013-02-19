@@ -1,0 +1,40 @@
+#!/bin/bash
+# YAIS: yet another installation script
+#
+for FILE in yais-func/*
+do
+	. $FILE
+done
+EDITOR=vi
+funcs=(bash editor partition mount_disk testnet install_pkg install_grub fstab exit)
+menuname=(
+	"Open a bash shell" \
+	"Select an editor(default vi)" \
+	"Partitioning" \
+	"Mount your partitions" \
+	"Test the internet" \
+	"Install packages" \
+	"Install grub" \
+	"Generate fstab" \
+	"Exit YAIS" \
+	)
+TODO=1
+
+menu(){
+	for i in {0..8} 
+	do
+		if [ $i == $TODO ]; then
+			echo -e -n '\033[31m'
+		fi
+		echo -e "$i. ${menuname[$i]}\033[0m"
+	done
+}
+
+while true
+do
+	clear
+	menu
+	read FUNCID
+	${funcs[$FUNCID]}
+done
+
