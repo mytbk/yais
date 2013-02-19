@@ -32,9 +32,15 @@ install_grub(){
 	DISK=${DISK:-"/dev/sda"}
 	arch-chroot /mnt "grub-install $DISK"
 	arch-chroot /mnt "grub-mkconfig -o /boot/grub/grub.cfg"
+	echo "GRUB installed, press enter to continue"
+	read
 }
 
 fstab(){
 	genfstab /mnt > /mnt/etc/fstab
+}
+
+setpass(){
+	arch-chroot /mnt passwd
 }
 

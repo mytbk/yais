@@ -6,7 +6,7 @@ do
 	. $FILE
 done
 EDITOR=vi
-funcs=(bash editor partition mount_disk mirrorselect testnet install_pkg install_grub fstab exit)
+funcs=(bash editor partition mount_disk mirrorselect testnet install_pkg install_grub fstab setpass exit)
 menuname=(
 	"Open a bash shell" \
 	"Select an editor(default vi)" \
@@ -17,12 +17,13 @@ menuname=(
 	"Install packages" \
 	"Install grub" \
 	"Generate fstab" \
+	"Set root password" \
 	"Exit YAIS" \
 	)
 TODO=1
 
 menu(){
-	for i in {0..9} 
+	for i in {0..10} 
 	do
 		if [ $i == $TODO ]; then
 			echo -e -n '\033[31m'
