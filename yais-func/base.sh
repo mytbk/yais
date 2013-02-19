@@ -30,14 +30,17 @@ install_grub(){
 	echo -n "The disk you'll install grub on(default /dev/sda):"
 	read DISK
 	DISK=${DISK:-"/dev/sda"}
-	arch-chroot /mnt "grub-install $DISK"
-	arch-chroot /mnt "grub-mkconfig -o /boot/grub/grub.cfg"
-	echo "GRUB installed, press enter to continue"
+	arch-chroot /mnt grub-install $DISK
+	arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
+	echo -e "\033[32mGRUB installed, press enter to continue\033[0m"
 	read
 }
 
 fstab(){
 	genfstab /mnt > /mnt/etc/fstab
+	echo "\033[32mgenfstab ok, press enter to edit your fstab\033[0m"
+	read
+	$EDITOR /mnt/etc/fstab	
 }
 
 setpass(){
