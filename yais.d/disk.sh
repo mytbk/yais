@@ -1,7 +1,6 @@
 mount_read(){
 	if [ -n $3 ]; then
-		echo "To format $1 to $3"
-		mkfs.$3 $1
+		mkfs.$3 -q $1
 	fi
 	echo "mount $1 /mnt$2"
 	if [ ! -d /mnt$2 ]; then
