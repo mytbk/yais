@@ -16,8 +16,8 @@ mount_disk(){
 	fi
 	$EDITOR /tmp/mounttab
 	sed \
-		-e '/^#/d' \
 		-e 's/^[ \t]*//g' \
+		-e '/^#/d' \
 		-e '/^$/d' \
 		/tmp/mounttab|sort -k 2,2 > /tmp/mount.tmp
 	cat /tmp/mount.tmp|while read LINE

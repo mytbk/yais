@@ -6,12 +6,13 @@ do
 	. $FILE
 done
 EDITOR=vi
-funcs=(bash editor partition mount_disk testnet install_pkg install_grub fstab exit)
+funcs=(bash editor partition mount_disk mirrorselect testnet install_pkg install_grub fstab exit)
 menuname=(
 	"Open a bash shell" \
 	"Select an editor(default vi)" \
 	"Partitioning" \
 	"Mount your partitions" \
+	"Select a mirror" \
 	"Test the internet" \
 	"Install packages" \
 	"Install grub" \
@@ -21,7 +22,7 @@ menuname=(
 TODO=1
 
 menu(){
-	for i in {0..8} 
+	for i in {0..9} 
 	do
 		if [ $i == $TODO ]; then
 			echo -e -n '\033[31m'
@@ -35,6 +36,8 @@ do
 	clear
 	menu
 	read FUNCID
+	FUNCID=${FUNCID:-$TODO}
 	${funcs[$FUNCID]}
+	let TODO=FUNCID+1
 done
 
