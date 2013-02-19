@@ -38,7 +38,7 @@ install_grub(){
 
 fstab(){
 	genfstab /mnt > /mnt/etc/fstab
-	echo "\033[32mgenfstab ok, press enter to edit your fstab\033[0m"
+	echo -e "\033[32mgenfstab ok, press enter to edit your fstab\033[0m"
 	read
 	$EDITOR /mnt/etc/fstab	
 }

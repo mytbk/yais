@@ -23,6 +23,7 @@ menuname=(
 TODO=1
 
 menu(){
+	echo "YAIS 0.1Alpha"
 	for i in {0..10} 
 	do
 		if [ $i == $TODO ]; then
