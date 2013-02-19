@@ -38,6 +38,8 @@ do
 	read FUNCID
 	FUNCID=${FUNCID:-$TODO}
 	${funcs[$FUNCID]}
-	let TODO=FUNCID+1
+	if [ $FUNCID -gt 0 ]; then
+		let TODO=FUNCID+1
+	fi
 done
 
