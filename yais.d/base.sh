@@ -16,12 +16,7 @@ testnet(){
 }
 
 install_pkg(){
-	if [ ! -f /tmp/packages ]; then
-		echo "# These are the groups/packages to be installed" >> /tmp/packages
-		echo "base base-devel grub-bios" >> /tmp/packages
-		echo "# Add the packages you like, remember to uncomment them" >> /tmp/packages
-		echo "#vim htop" >> /tmp/packages
-	fi
+	[ -f /tmp/packages ] || cp /etc/yais.d/packages.example /tmp/packages
 	$EDITOR /tmp/packages
 	pacstrap /mnt $(sed -e 's/^[ \t]*//g' -e '/^#/d' /tmp/packages)
 }

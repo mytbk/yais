@@ -1,0 +1,4 @@
+# The groups/packages uncommented will be installed
+base grub-bios
+# vim htop
+# base-devel xorg-server

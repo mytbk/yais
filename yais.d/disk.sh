@@ -1,4 +1,8 @@
 mount_read(){
+	if [ -n $3 ]; then
+		echo "To format $1 to $3"
+		mkfs.$3 $1
+	fi
 	echo "mount $1 /mnt$2"
 	if [ ! -d /mnt$2 ]; then
 		mkdir -p /mnt$2
@@ -8,12 +12,8 @@ mount_read(){
 
 mount_disk(){ 
 	#read the mounttab file
-	#mount_disk <dev> <mountpoint>
-	if [ ! -f /tmp/mounttab ]; then
-		echo "# examples:" > /tmp/mounttab
-		echo "# /dev/sda5 /" >> /tmp/mounttab
-		echo "# /dev/sda1 /boot" >> /tmp/mounttab
-	fi
+	#mount_disk <dev> <mountpoint> <fs>
+	[ -f /tmp/mounttab ] || cp /etc/yais.d/mounttab.example /tmp/mounttab
 	$EDITOR /tmp/mounttab
 	sed \
 		-e 's/^[ \t]*//g' \
@@ -38,7 +38,8 @@ partition(){
 	done
 	read TOOLID
 	${OPTIONS[$TOOLID]} ${DISK}
-	echo "If you have not formatted your partitions,"
-	echo "you can open a shell to mkfs your partitions."
+	echo "Not that your partitions are not formatted."
+	echo "Press enter to continue"
+	read
 }
 
