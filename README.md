@@ -16,5 +16,5 @@ These are the brief steps for archlinux installing:
 8. Set root password      
 This script uses a text interface to lead you finishing      
 these steps. When you're to go to a step, it'll be printed      
-red, and you just need to press <enter> to do it.      
+red, and you just need to press enter to do it.      
 
