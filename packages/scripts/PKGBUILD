@@ -12,7 +12,7 @@ optdepends=(
   'vim: a good editor'
   'gparted: partitioning tool with GUI')
 source=("https://raw.github.com/mytbk/$pkgname/master/packages/$pkgver/$pkgname-$pkgver.tar.gz")
-md5sums=('93418d8cc268743b63e16dc5e5086ff1')
+md5sums=('70699e5453898fab6c733a4289158348')
 
 build() {
   true

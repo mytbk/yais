@@ -46,7 +46,7 @@ partition(){
 	done
 	read TOOLID
 	${OPTIONS[$TOOLID]} ${DISK}
-	echo -e "\033[33mNot that your partitions are not formatted."
+	echo -e "\033[33mNote that your partitions are not formatted.\033[0m"
 	echo "Press enter to continue"
 	read
 }
