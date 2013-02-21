@@ -1,6 +1,7 @@
 #!/bin/bash
 # YAIS: yet another installation script
 #
+VERSION="0.1 Beta"
 for FILE in yais.d/*.sh
 do
 	. $FILE
@@ -23,7 +24,8 @@ menuname=(
 TODO=1
 
 menu(){
-	echo "YAIS 0.1Alpha"
+	echo "YAIS $VERSION"
+	echo
 	for i in {0..10} 
 	do
 		if [ $i == $TODO ]; then
@@ -31,6 +33,7 @@ menu(){
 		fi
 		echo -e "$i. ${menuname[$i]}\033[0m"
 	done
+	echo -n "Your option(default $TODO):"
 }
 
 while true
