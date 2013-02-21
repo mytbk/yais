@@ -10,7 +10,7 @@ mirrorselect(){
 }
 
 testnet(){
-	pacman -Syy && echo -e "\033[32mNetwork OK" || echo -e "\033[31mNetwork failed."
+	pacman -Sy && echo -e "\033[32mNetwork OK" || echo -e "\033[31mNetwork failed."
 	echo -e "\033[0mPress enter to continue"
 	read
 }

@@ -8,8 +8,11 @@ arch=('any')
 url="https://github.com/mytbk/yais"
 license=('GPL')
 depends=('arch-install-scripts')
+optdepends=(
+  'vim: a good editor'
+  'gparted: partitioning tool with GUI')
 source=("https://raw.github.com/mytbk/$pkgname/master/packages/$pkgver/$pkgname-$pkgver.tar.gz")
-md5sums=('496c21893112491d91bd7e3758ed51b7')
+md5sums=('5ea38b681c7703d5993298c88592841a')
 
 build() {
   true
