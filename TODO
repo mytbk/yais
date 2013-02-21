@@ -1,3 +1,4 @@
 Add mkswap/swapon support
 LVM/btrfs subvol support
-
+Add a lock to prevent multi-process
+Add ncurses(dialog) UI
