@@ -1,6 +1,12 @@
 mount_read(){
 	if [ -n $3 ]; then
-		mkfs.$3 -q $1
+		echo -e "\033[31m$1 will be formatted!\033[0m Continue?(y/n)"
+		read ANS
+		shopt -s nocasematch
+		if [ ${ANS} = "y" ]; then
+			mkfs.$3 -q $1
+		fi
+		shopt -u nocasematch
 	fi
 	echo "mount $1 /mnt$2"
 	if [ ! -d /mnt$2 ]; then
@@ -19,9 +25,12 @@ mount_disk(){
 		-e '/^#/d' \
 		-e '/^$/d' \
 		/tmp/mounttab|sort -k 2,2 > /tmp/mount.tmp
-	cat /tmp/mount.tmp|while read LINE
+	WC=$(wc -l</tmp/mount.tmp)
+	NLINE=0
+	while [ ${NLINE} -lt ${WC} ]
 	do
-		mount_read $LINE
+		let NLINE++
+		mount_read $(head -n$NLINE /tmp/mount.tmp|tail -n1)
 	done
 }
 
