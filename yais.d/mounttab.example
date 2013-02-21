@@ -1,9 +1,12 @@
-# if you want to format a partition,the write
-# /dev/sdXY /<mountpoint> <format>
+# if you want to format a partition,then write
+# /dev/sdXY <mountpoint> <format>
 # otherwise write
-# /dev/sdXY /<mountpoint>
+# /dev/sdXY <mountpoint>
+#
 # for example
+# format /dev/sda1 as ext2 and mount /dev/sda1 to /boot
 # /dev/sda1 /boot ext2
+# do not format /dev/sda6 and /dev/sda5
 # /dev/sda6 /home
 # /dev/sda5 /
 
