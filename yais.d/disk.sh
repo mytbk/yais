@@ -1,5 +1,5 @@
 mount_read(){
-	if [ -n $3 ]; then
+	if [ -n "$3" ]; then
 		echo -e "\033[31m$1 will be formatted!\033[0m Continue?(y/n)"
 		read ANS
 		shopt -s nocasematch
@@ -46,7 +46,7 @@ partition(){
 	done
 	read TOOLID
 	${OPTIONS[$TOOLID]} ${DISK}
-	echo "Not that your partitions are not formatted."
+	echo "\033[33mNot that your partitions are not formatted."
 	echo "Press enter to continue"
 	read
 }
