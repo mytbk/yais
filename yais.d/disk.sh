@@ -1,4 +1,19 @@
 mount_read(){
+#some hard code to support swap
+	if [ "$2" = "swap" ]; then
+		if [ "$3" = "swap" ]; then
+			echo -e "\033[31m$1 will be formatted!\033[0m Continue?(y/n)"
+			read ANS
+			shopt -s nocasematch
+			if [ ${ANS} = "y" ]; then
+				mkswap $1
+			fi
+			shopt -u nocasematch
+		fi
+		echo "To mount $1 as swap."
+		swapon $1
+	fi
+
 	if [ -n "$3" ]; then
 		echo -e "\033[31m$1 will be formatted!\033[0m Continue?(y/n)"
 		read ANS

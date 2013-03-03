@@ -2,6 +2,8 @@
 # /dev/sdXY <mountpoint> <format>
 # otherwise write
 # /dev/sdXY <mountpoint>
+# if it's a swap partition, the <mountpoint> and <format>
+# part should be swap
 #
 # for example
 # format /dev/sda1 as ext2 and mount /dev/sda1 to /boot
@@ -9,4 +11,6 @@
 # do not format /dev/sda6 and /dev/sda5
 # /dev/sda6 /home
 # /dev/sda5 /
+# make /dev/sda8 swap
+# /dev/sda8 swap swap
 
