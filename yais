@@ -2,6 +2,11 @@
 # YAIS: yet another installation script
 #
 VERSION="0.1 Beta"
+if [ ${UID} -ne 0 ]; then
+	echo "You must be root, but Arch is the best!"
+	exit
+fi
+
 for FILE in yais.d/*.sh
 do
 	. $FILE
