@@ -24,11 +24,11 @@ mount_read(){
 		fi
 		shopt -u nocasematch
 	fi
-	echo "mount $1 /mnt$2"
-	if [ ! -d /mnt$2 ]; then
-		mkdir -p /mnt$2
+	echo "mount $1 ${ROOTDIR}$2"
+	if [ ! -d ${ROOTDIR}$2 ]; then
+		mkdir -p ${ROOTDIR}$2
 	fi
-	mount $1 /mnt$2
+	mount $1 ${ROOTDIR}$2
 }
 
 mount_disk(){ 
