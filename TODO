@@ -1,6 +1,8 @@
-a bug exists in disk.sh
-LVM/btrfs subvol support
-Add a lock to prevent multi-process
 Add ncurses(dialog) UI
-Add multi-lingual support
+Add mount options support
+LVM/btrfs subvol support
+Unmount partitions on exit
 Add clone-cd function
+Add a lock to prevent multi-process
+Add multi-lingual support
+internal pacstrap,(arch-)chroot,genfstab
