@@ -12,6 +12,7 @@ mount_read(){
 		fi
 		echo "To mount $1 as swap."
 		swapon $1
+		return
 	fi
 
 	if [ -n "$3" ]; then
