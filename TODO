@@ -1,3 +1,4 @@
+a bug exists in disk.sh
 LVM/btrfs subvol support
 Add a lock to prevent multi-process
 Add ncurses(dialog) UI
