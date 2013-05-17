@@ -39,14 +39,14 @@ menu(){
 		echo -e "$i. ${menuname[$i]}\033[0m"
 	done
 	echo -n "Your option(default $TODO):"
+	read FUNCID
+	FUNCID=${FUNCID:-$TODO}
 }
 
 while true
 do
 	clear
 	menu
-	read FUNCID
-	FUNCID=${FUNCID:-$TODO}
 	${funcs[$FUNCID]}
 	if [ $FUNCID -gt 0 ]; then
 		let TODO=FUNCID+1
