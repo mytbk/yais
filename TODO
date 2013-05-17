@@ -1,6 +1,4 @@
-Add ncurses(dialog) UI
-Add mount options support
-LVM/btrfs subvol support
+A new mounttab format
 Unmount partitions on exit
 Add clone-cd function
 Add a lock to prevent multi-process
