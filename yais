@@ -15,7 +15,7 @@ done
 . yais.d/profile/debian.profile
 
 EDITOR=vi
-funcs=(bash editor partition mount_disk mirrorselect testnet pkgstrap install_grub fstab setpass exit)
+funcs=(bash editor partition mount_disk mirrorselect testnet pkgstrap install_grub fstab setpass yais_chroot exit)
 menuname=(
 	"Open a bash shell" \
 	"Select an editor" \
@@ -27,6 +27,7 @@ menuname=(
 	"Install grub" \
 	"Generate fstab" \
 	"Set root password" \
+	"Chroot"
 	"Exit YAIS" \
 	)
 TODO=1

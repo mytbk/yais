@@ -30,3 +30,7 @@ setpass(){
 	arch-chroot ${ROOTDIR} passwd
 }
 
+yais_chroot(){
+	arch-chroot ${ROOTDIR} /bin/bash
+}
+
