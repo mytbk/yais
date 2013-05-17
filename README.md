@@ -14,7 +14,6 @@ These are the brief steps for archlinux installing:
 6. chroot to install grub      
 7. generate fstab      
 8. Set root password      
-This script uses a text interface to lead you finishing      
-these steps. When you're to go to a step, it'll be printed      
-red, and you just need to press enter to do it.      
+This script leads you finishing these steps.     
+You can use it to install arch and debian.      
 
