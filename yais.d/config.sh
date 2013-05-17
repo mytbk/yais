@@ -1,4 +1,4 @@
 # The default configuration for YAIS
-export ROOTDIR=/mnt/$RANDOM-ARCH
+export ROOTDIR=/run/mount/$RANDOM-ARCH
 install -d ${ROOTDIR}
 
