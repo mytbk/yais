@@ -1,5 +1,5 @@
 MIRROR=http://mirrors.tuna.tsinghua.edu.cn/debian
-INSTALLPKG="grub-pc,vim,htop,build-essential"
+INSTALLPKG="linux-image-amd64,grub-pc,vim,htop,build-essential"
 OPTION="--include=${INSTALLPKG}"
 SUITE=stable
 
