@@ -12,12 +12,13 @@ for FILE in yais.d/*.sh
 do
 	. $FILE
 done
-. yais.d/profile/debian.profile
-
+PROFILEDIR=yais.d/profile/
+cp "${PROFILEDIR}/archlinux.sh" /tmp/yais.profile
+PROFILE=/tmp/yais.profile
 EDITOR=vi
-funcs=(bash editor partition mount_disk mirrorselect testnet pkgstrap install_grub fstab setpass yais_chroot exit)
+funcs=(yais_config editor partition mount_disk mirrorselect testnet pkgstrap install_grub fstab setpass yais_chroot exit)
 menuname=(
-	"Open a bash shell" \
+	"Config YAIS" \
 	"Select an editor" \
 	"Partitioning" \
 	"Mount your partitions" \
@@ -40,7 +41,6 @@ menu(){
 	for _i in $(seq -s ' ' 0 $((${#menuname[@]}-1))) 
 	do
 		MENU="${MENU} ${_i} \"${menuname[${_i}]}\""
-#	echo "${MENU}"
 	done
 	eval ${MENU}
 }
